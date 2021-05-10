@@ -1,47 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet"> 
-<link href="https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap" rel="stylesheet"> 
-  
-  <title>Frontend Mentor | Stats preview card component</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    :root {
-      --main-background: hsl(233, 47%, 7%);
-      --card-background: hsl(244, 38%, 16%);
-      --accent: hsl(277, 64%, 61%);
-      --white-100: hsl(0, 0%, 100%);
-      --white-75: hsla(0, 0%, 100%, 0.75);
-      --white-60: hsla(0, 0%, 100%, 0.6);
-      font-size: 15px;
-    }
+    <title>Frontend Mentor | Stats preview card component</title>
 
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      :root {
+        --main-background: hsl(233, 47%, 7%);
+        --card-background: hsl(244, 38%, 16%);
+        --accent: hsl(277, 64%, 61%);
+        --white-100: hsl(0, 0%, 100%);
+        --white-75: hsla(0, 0%, 100%, 0.75);
+        --white-60: hsla(0, 0%, 100%, 0.6);
+        font-size: 15px;
+        font-family: "Inter", sans-serif;
+      }
 
-  Get insights that help your business grow.
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        height: 100vh;
+        background-color: var(--main-background);
+      }
 
-  Discover the benefits of data analytics and make better decisions regarding revenue, customer 
-  experience, and overall efficiency.
+      .card {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--card-background);
+        color: var(--white-100);
+        max-width: 70%;
+      }
 
-  10k+ companies
-  314 templates
-  12m+ queries
+      .card .card-info {
+        box-sizing: border-box;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 0 4rem;
+        width: 550px;
+      }
 
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+      .card-info > *,
+      .stat > * {
+        margin: 0;
+      }
+
+      .card-info h2 {
+        font-size: 2rem;
+      }
+
+      .card-info .insights {
+        color: var(--accent);
+      }
+
+      .card-info .main-paragraph {
+        color: var(--white-60);
+        max-width: 40ch;
+        font-size: .9rem;
+        margin-top: 1.25rem;
+        line-height: 1.8rem;
+      }
+
+      .card-info .stats {
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        align-items: center;
+        width: 100%;
+        gap: 2rem;
+        margin-top: 4rem;
+      }
+
+      .stat h3 {
+        font-size: 1.15rem;
+      }
+
+      .stat h4 {
+        margin: .25rem 0;
+      }
+
+      .card-info .stat-headings {
+        font-family: "Lexend Deca", sans-serif;
+        font-weight: 300;
+        font-size: .9rem;
+        color: var(--white-60);
+      }
+
+      .card-img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .card-img img{
+        width: 100%;
+        height: auto;
+      }
+
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+        color: var(--accent);
+        
+      }
+      .attribution a {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="card-info">
+        <h2>
+          Get <span class="insights">insights</span> that help your business grow.
+        </h2>
+        <span class="main-paragraph"
+          >Discover the benefits of data analytics and make better decisions
+          regarding revenue, customer experience, and overall efficiency.</span
+        >
+        <div class="stats">
+          <div class="stat">
+            <h3>10k+</h3>
+            <h4 class="stat-headings">COMPANIES</h4>
+          </div>
+          <div class="stat">
+            <h3>314</h3>
+            <h4 class="stat-headings">TEMPLATES</h4>
+          </div>
+          <div class="stat">
+            <h3>12M+</h3>
+            <h4 class="stat-headings">QUERIES</h4>
+          </div>
+        </div>
+      </div>
+      <div class="card-img">
+        <img src="images/image-header-desktop.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div>
+  </body>
 </html>
