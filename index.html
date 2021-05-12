@@ -38,8 +38,6 @@
         font-family: "Inter", sans-serif;
       }
 
-      
-
       body {
         margin: 0;
         display: flex;
@@ -63,7 +61,7 @@
         overflow: hidden;
       }
 
-      .card > *{
+      .card > * {
         flex: 1 1 50%;
       }
 
@@ -105,7 +103,7 @@
         margin-top: 1.75rem;
         max-width: 40ch;
         font-size: 1rem;
-        line-height: 1.70rem;
+        line-height: 1.7rem;
         color: var(--white-60);
       }
 
@@ -122,12 +120,13 @@
       }
 
       .stat .stat-headings {
-        font-family: 'Lexend Deca' sans-serif;
+        font-family: "Lexend Deca" sans-serif;
         color: var(--white-60);
         font-weight: 400;
-        font-size: .8rem;
-        margin-top: .3rem;
-        letter-spacing: .1rem;
+        font-size: 0.8rem;
+        margin-top: 0.3rem;
+        letter-spacing: 0.1rem;
+        height: auto;
       }
 
       .stat h3 {
@@ -154,6 +153,72 @@
         height: 100%;
         width: 100%;
         background-color: var(--accent-50);
+      }
+
+      @media screen and (max-width: 375px) {
+        body {
+          margin: 5rem 0;
+          height: unset;
+          gap: 1rem;
+        }
+
+        .card {
+          flex-direction: column-reverse;
+          max-width: 90%;
+        }
+
+        .card > * {
+          flex: unset;
+          width: 100%;
+        }
+
+        .card .card-info {
+          text-align: center;
+          padding: 2rem;
+        }
+
+        .card-info .details {
+          margin-top: 0;
+        }
+
+        .details h2 {
+          font-size: 1.75rem;
+        }
+
+        .card-info .stats {
+          margin-top: 2.25rem;
+          display: flex;
+          flex-direction: column;
+          align-self: center;
+          text-align: center;
+          gap: 4rem;
+        }
+
+        .stats .stat > * {
+          margin: 0;
+        }
+
+        .card .card-img {
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          overflow: visible;
+        }
+
+        .card-img img {
+          height: auto;
+          width: 100%;
+        }
+
+        .card-img .color-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          background-color: var(--accent-50);
+        }
       }
 
       .attribution {
