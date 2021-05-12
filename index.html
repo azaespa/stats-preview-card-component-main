@@ -51,12 +51,14 @@
       .card {
         box-sizing: border-box;
         display: flex;
-        flex-direction: row;
+        flex-direction: column-reverse;
         justify-content: center;
         align-items: center;
         background-color: var(--card-background);
         color: var(--white-100);
-        max-width: 70%;
+        max-width: 90%;
+        overflow: hidden;
+        border-radius: 10px;
       }
 
       .card .card-info {
@@ -65,17 +67,26 @@
         flex-flow: column wrap;
         justify-content: center;
         align-items: flex-start;
-        padding: 0 4rem;
-        width: 550px;
+        padding: 2rem;
+        width: 100%;
       }
 
-      .card-info > *,
+      .card-info .details {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+      }
+
+      .details > *,
       .stat > * {
         margin: 0;
       }
 
       .card-info h2 {
-        font-size: 2rem;
+        font-size: 1.75rem;
       }
 
       .card-info .insights {
@@ -84,35 +95,34 @@
 
       .card-info .main-paragraph {
         color: var(--white-60);
-        max-width: 40ch;
-        font-size: .9rem;
+        font-size: 1rem;
         margin-top: 1.25rem;
         line-height: 1.8rem;
       }
 
       .card-info .stats {
         display: flex;
-        flex-direction: row;
-        justify-content: left;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
+        text-align: center;
         width: 100%;
         gap: 2rem;
-        margin-top: 4rem;
+        margin-top: 2rem;
       }
 
       .stat h3 {
-        font-size: 1.15rem;
-      }
-
-      .stat h4 {
-        margin: .25rem 0;
+        font-size: 1.5rem;
+        font-weight: 600;
       }
 
       .card-info .stat-headings {
         font-family: "Lexend Deca", sans-serif;
-        font-weight: 300;
-        font-size: .9rem;
+        font-weight: 200;
+        font-size: .8rem;
+        letter-spacing: .1rem;
         color: var(--white-60);
+        margin-top: .5rem;
       }
 
       .card-img {
@@ -134,14 +144,8 @@
       }
 
       .card-img img {
-        width: 100%;
         height: auto;
-      }
-
-      @media screen and (max-width: 375px){
-        .card {
-          flex-direction: column-reverse;
-        }
+        width: 100%;
       }
 
       .attribution {
@@ -158,13 +162,15 @@
   <body>
     <div class="card">
       <div class="card-info">
-        <h2>
-          Get <span class="insights">insights</span> that help your business grow.
-        </h2>
-        <span class="main-paragraph"
-          >Discover the benefits of data analytics and make better decisions
-          regarding revenue, customer experience, and overall efficiency.</span
-        >
+        <div class="details">
+          <h2>
+            Get <span class="insights">insights</span> that help your business grow.
+          </h2>
+          <span class="main-paragraph"
+            >Discover the benefits of data analytics and make better decisions
+            regarding revenue, customer experience, and overall efficiency.</span
+          >
+        </div>
         <div class="stats">
           <div class="stat">
             <h3>10k+</h3>
@@ -181,7 +187,10 @@
         </div>
       </div>
       <div class="card-img">
-        <img src="images/image-header-desktop.jpg" alt="">
+        <img srcset="images/image-header-mobile.jpg 654w,
+        images/image-header-desktop.jpg 540w"
+        sizes="(max-width: 375px) 654px, 540px"
+        src="images/image-header-mobile.jpg" alt="">
         <div class="color-overlay"></div>
       </div>
     </div>
